@@ -1,0 +1,43 @@
+<h2>Products</h2>
+
+<input
+  [formControl]="searchFormControl"
+  (keydown.enter)="updateSearchTerm()"
+  placeholder="Search for a product">
+
+<div class="search-results" *ngIf="!(loading$ | async) && (loaded$ | async) && (searchResults$ | async)?.length">
+  <div class="product" *ngFor="let product of (searchResults$ | async); let index = index">
+
+    <img [ngSrc]="product.image" width="96" height="96">
+    <div class="details">
+      <h3 class="name">{{product.name}}</h3>
+      <div class="description">{{product.description}}</div>
+      <div class="price">{{product.price | currency}}</div>
+    </div>
+
+    <div class="action">
+      <button
+        *ngIf="product.id | isInCart : (cart$ | async)!; else addButton"
+        (click)="removeFromCart(product.id)">
+        remove from cart
+      </button>
+
+      <ng-template #addButton>
+        <button
+          class="primary"
+          (click)="addToCart(product)">
+          add to cart
+        </button>
+      </ng-template>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="!(loading$ | async) && (loaded$ | async) && !(searchResults$ | async)?.length">
+  No results found.
+</div>
+
+<div *ngIf="loading$ | async">
+  Loading results...
+</div>

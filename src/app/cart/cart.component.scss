@@ -1,0 +1,35 @@
+:host {
+  background-color: #222;
+  flex: 1 1 auto;
+  display: block;
+  padding: 1.5rem 1rem;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.cart {
+  margin-bottom: 2rem;
+  color: #aaa;
+
+  .product {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    color: #eee;
+    &:not(:last-child) {
+      border-bottom: 1px solid #333;
+    }
+  }
+  .total-price {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+  }
+}
+
+.page-action {
+  display: flex;
+  justify-content: flex-end;
+}

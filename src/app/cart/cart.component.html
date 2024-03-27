@@ -1,0 +1,27 @@
+<h2>Cart</h2>
+
+<div class="cart" *ngIf="(cart$ | async)?.length; else emptyCart">
+  <div class="product" *ngFor="let product of (cart$ | async)!">
+    <h4 class="name">{{product.name}}</h4>
+    <div class="price">${{product.price}}</div>
+  </div>
+
+  <div class="total-price">
+    {{(cart$ | async)! | totalPrice | currency}}
+  </div>
+</div>
+
+<ng-template #emptyCart>
+  <div class="cart">
+    No items in cart.
+  </div>
+</ng-template>
+
+<div class="page-action">
+  <button
+    class="primary"
+    (click)="buy()"
+    [disabled]="cartEmpty$ | async">
+    buy now
+  </button>
+</div>

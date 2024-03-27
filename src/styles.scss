@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #eee;
+  background-color: #000;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+a,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 2rem;
+  border: 0;
+  border-radius: .25rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: .75rem;
+  background-color: #545454;
+  cursor: pointer;
+  &.primary {
+    background-color: #2b567c;
+  }
+  &:hover {
+    filter: brightness(1.1);
+    text-decoration: none;
+  }
+
+  &[disabled] {
+    background-color: #333;
+    color: #666;
+    cursor: default;
+    &:hover {
+      filter: none;
+    }
+  }
+}
