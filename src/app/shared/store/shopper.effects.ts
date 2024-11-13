@@ -26,24 +26,26 @@ export class ShopperEffects {
   search$ = createEffect(() => this.actions$.pipe(
     ofType(ShopperActionType.SEARCH),
     withLatestFrom(this.store.select(selectSearchTerm)),
-    switchMap(([action, searchTerm]) => this.productsService.search$(searchTerm).pipe(
-      map((searchResults: Product[]) => ({
-        type: ShopperActionType.SEARCH_SUCCESS,
-        searchResults
-      })),
-      catchError((error: HttpErrorResponse) => of({
-        type: ShopperActionType.SEARCH_ERROR,
-        error: error.statusText
-      }))
-    ))
+    switchMap(([action, searchTerm]) =>
+      this.productsService.search$(searchTerm).pipe(
+        map((searchResults: Product[]) => ({
+          type: ShopperActionType.SEARCH_SUCCESS,
+          searchResults
+        })),
+        catchError((error: HttpErrorResponse) => of({
+          type: ShopperActionType.SEARCH_ERROR,
+          error: error.statusText
+        }))
+      ))
   ));
 
   buy$ = createEffect(() => this.actions$.pipe(
     ofType(ShopperActionType.BUY),
     withLatestFrom(this.store.select(selectCart)),
-    switchMap(([action, cart]) => this.productsService.buy$(cart).pipe(
-      map(() => ({ type: ShopperActionType.RESET_CART })),
-      catchError(() => EMPTY)
-    ))
+    switchMap(([action, cart]) =>
+      this.productsService.buy$(cart).pipe(
+        map(() => ({ type: ShopperActionType.RESET_CART })),
+        catchError(() => EMPTY)
+      ))
   ));
 }

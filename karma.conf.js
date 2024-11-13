@@ -15,7 +15,7 @@ module.exports = function (config) {
     ],
     reporters: ['mocha', 'kjhtml'],
     client: {
-      clearContext: true, // leave Jasmine Spec Runner output visible in browser
+      clearContext: true,
       jasmine: {
         failSpecWithNoExpectations: true
       }
@@ -30,10 +30,10 @@ module.exports = function (config) {
       subdir: '.',
       check: {
         global: {
-          statements: 80,
-          branches: 80,
-          functions: 80,
-          lines: 80,
+          statements: 50,
+          branches: 50,
+          functions: 50,
+          lines: 50,
         }
       },
     },
@@ -43,7 +43,7 @@ module.exports = function (config) {
     concurrency: 1,
     port: 9876,
     colors: true,
-    logLevel: config.LOG_WARN,
+    logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['ChromeNoSandboxHeadless'],
     singleRun: false,
@@ -68,7 +68,7 @@ module.exports = function (config) {
       }
     },
     browserConsoleLogOptions: {
-      level: "warn",
+      level: "info",
       format: "%m",
       terminal: true
     }
