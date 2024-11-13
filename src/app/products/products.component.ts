@@ -4,10 +4,10 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Observable, of, take } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { Product } from '../shared/product.interface';
-import { IsInCartPipe } from '../shared/is-in-cart.pipe';
-import { selectCart, selectLoaded, selectLoading, selectSearchResults, selectSearchTerm } from '../shared/store/shopper.selectors';
-import * as ShopperActions from '../shared/store/shopper.actions';
+import { Product } from 'src/app/shared/product.interface';
+import { IsInCartPipe } from 'src/app/shared/is-in-cart.pipe';
+import { selectCart, selectLoaded, selectLoading, selectSearchResults, selectSearchTerm } from 'src/app/shared/store/shopper.selectors';
+import * as ShopperActions from 'src/app/shared/store/shopper.actions';
 
 @Component({
   selector: 'app-products',

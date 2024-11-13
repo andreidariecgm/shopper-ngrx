@@ -1,4 +1,4 @@
-import { Product } from '../product.interface';
+import { Product } from 'src/app/shared/product.interface';
 
 export interface ShopperState {
   searchResults: Product[];

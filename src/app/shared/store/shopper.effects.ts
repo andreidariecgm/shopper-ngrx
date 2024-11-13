@@ -4,10 +4,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { EMPTY, catchError, map, of, switchMap, withLatestFrom } from 'rxjs';
 
-import { ProductsService } from '../products.service';
-import { Product } from '../product.interface';
-import { ShopperActionType } from './shopper.actions';
-import { selectCart, selectSearchTerm } from './shopper.selectors';
+import { ProductsService } from 'src/app/shared/products.service';
+import { Product } from 'src/app/shared/product.interface';
+import { ShopperActionType } from 'src/app/shared/store/shopper.actions';
+import { selectCart, selectSearchTerm } from 'src/app/shared/store/shopper.selectors';
 
 @Injectable()
 export class ShopperEffects {

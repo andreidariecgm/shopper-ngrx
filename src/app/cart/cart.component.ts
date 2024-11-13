@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Observable, of } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { Product } from '../shared/product.interface';
-import { TotalPricePipe } from '../shared/total-price.pipe';
-import { selectCart, selectCartEmpty } from '../shared/store/shopper.selectors';
-import * as ShopperActions from '../shared/store/shopper.actions';
+import { Product } from 'src/app/shared/product.interface';
+import { TotalPricePipe } from 'src/app/shared/total-price.pipe';
+import { selectCart, selectCartEmpty } from 'src/app/shared/store/shopper.selectors';
+import * as ShopperActions from 'src/app/shared/store/shopper.actions';
 
 @Component({
   selector: 'app-cart',

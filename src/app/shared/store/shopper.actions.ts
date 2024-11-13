@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { Product } from '../product.interface';
+import { Product } from 'src/app/shared/product.interface';
 
 export enum ShopperActionType {
   SEARCH = '[Shopper] Search',

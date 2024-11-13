@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { Product } from './product.interface';
+import { Product } from 'src/app/shared/product.interface';
 
 @Pipe({
   name: 'isInCart',

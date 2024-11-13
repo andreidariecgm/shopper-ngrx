@@ -5,10 +5,10 @@ import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
-import { ProductsComponent } from './products/products.component';
-import { CartComponent } from './cart/cart.component';
-import { shopperReducer } from './shared/store/shopper.reducer';
-import { ShopperEffects } from './shared/store/shopper.effects';
+import { ProductsComponent } from 'src/app/products/products.component';
+import { CartComponent } from 'src/app/cart/cart.component';
+import { shopperReducer } from 'src/app/shared/store/shopper.reducer';
+import { ShopperEffects } from 'src/app/shared/store/shopper.effects';
 
 const routes: Routes = [
   {

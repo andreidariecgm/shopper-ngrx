@@ -1,6 +1,6 @@
 <h2>Cart</h2>
 
-<div class="cart" *ngIf="(cart$ | async)?.length; else emptyCart">
+<div class="cart" *ngIf="!(cartEmpty$ | async); else emptyCart">
   <div class="product" *ngFor="let product of (cart$ | async)!">
     <h4 class="name">{{product.name}}</h4>
     <div class="price">${{product.price}}</div>

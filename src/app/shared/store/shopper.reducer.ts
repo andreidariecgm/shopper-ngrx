@@ -1,8 +1,8 @@
 import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
 
-import { Product } from '../product.interface';
-import { ShopperState, initialShopperState } from './shopper.state';
-import * as ShopperActions from './shopper.actions';
+import { Product } from 'src/app/shared/product.interface';
+import { ShopperState, initialShopperState } from 'src/app/shared/store/shopper.state';
+import * as ShopperActions from 'src/app/shared/store/shopper.actions';
 
 export const shopperReducer: ActionReducer<ShopperState, Action> = createReducer(
   initialShopperState,

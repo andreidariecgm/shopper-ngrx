@@ -4,7 +4,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { selectCartSize } from './shared/store/shopper.selectors';
+import { selectCartSize } from 'src/app/shared/store/shopper.selectors';
 
 @Component({
   selector: 'app-root',
